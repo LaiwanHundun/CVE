@@ -45,8 +45,8 @@ Vulnerability Description:​​
 A stack-based buffer overflow vulnerability exists in Tenda AC20 router via the `/goform/SetFirewallCfg` endpoint. The vulnerability occurs when processing the `firewallEn` parameter: after verifying input length > 3 via `strlen()`, the program uses unsafe `strcpy()` to copy user-controlled data into a fixed-size stack buffer (local_98[152 bytes]). Due to missing upper-bound length validation, attackers can craft oversized payloads to overflow the buffer. Successful exploitation could allow denial of service, arbitrary code execution.
 ​​Workaround Solution:​​
 
-Add length validation for the firewallE.
+Add length validation for the firewallEn
 
 ​​Permanent Solution:​​
 
-Add length validation for the firewallE.
+Add length validation for the firewallEn
